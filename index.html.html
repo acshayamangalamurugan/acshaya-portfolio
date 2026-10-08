@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acshaya M N | AI & Data Science</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6f8;--surface:#fff;--ink:#17202b;--muted:#556170;--line:#d9dee4;--bronze:#a86a35;--silver:#9aa4b0;--gold:#d9a21b;--link:#8a5a00;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10161d;--surface:#18212b;--ink:#eef1f4;--muted:#a3adb9;--line:#2b3744;--bronze:#c98650;--silver:#aab3be;--gold:#f0b92c;--link:#f0b92c}}
+:root[data-theme="dark"]{--bg:#10161d;--surface:#18212b;--ink:#eef1f4;--muted:#a3adb9;--line:#2b3744;--bronze:#c98650;--silver:#aab3be;--gold:#f0b92c;--link:#f0b92c}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+nav{display:flex;gap:20px;flex-wrap:wrap;padding:20px 0;font-weight:500}
+nav a{color:var(--ink);text-decoration:none}
+nav a:hover{text-decoration:underline}
+/* hero */
+.hero{padding:56px 0 72px}
+.hero h1{font-size:clamp(48px,11vw,112px);font-weight:800;letter-spacing:-.03em}
+.hero p.lead{max-width:56ch;font-size:20px;color:var(--muted);margin:24px 0 32px}
+.layers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;max-width:560px;margin-bottom:32px}
+.layers span{display:block;height:14px;border-radius:2px;transform-origin:left;animation:fill 1.1s ease-out both}
+.layers span:nth-child(1){background:var(--bronze)}
+.layers span:nth-child(2){background:var(--silver);animation-delay:.35s}
+.layers span:nth-child(3){background:var(--gold);animation-delay:.7s}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:500;text-decoration:none;border:2px solid var(--ink);color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#17202b}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(30px,5vw,44px);font-weight:700;margin-bottom:28px;letter-spacing:-.02em}
+h3{font-size:24px;font-weight:700}
+.about{display:grid;grid-template-columns:2fr 1fr;gap:40px}
+.facts{margin:0;padding:0;list-style:none;color:var(--muted)}
+.facts li{padding:8px 0;border-bottom:1px solid var(--line)}
+.facts b{color:var(--ink);font-weight:500}
+/* projects */
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:32px;margin-bottom:24px}
+.proj p{max-width:68ch;margin:12px 0 20px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:20px 0 0;list-style:none}
+.tags li{border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:14px;color:var(--muted)}
+.flow{display:flex;gap:8px;flex-wrap:wrap;padding:0;margin:0;list-style:none;counter-reset:s}
+.flow li{counter-increment:s;flex:1 1 140px;border:1px solid var(--line);border-radius:6px;padding:10px 12px;font-size:15px}
+.flow li::before{content:counter(s) ". ";font-weight:500;color:var(--link)}
+.med{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.med div{border-radius:6px;padding:14px;font-size:15px;color:#17202b}
+.med div:nth-child(1){background:var(--bronze)}
+.med div:nth-child(2){background:var(--silver)}
+.med div:nth-child(3){background:var(--gold)}
+.med strong{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:19px}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px 40px}
+.skills h3{font-size:18px;margin-bottom:8px}
+.skills p{margin:0;color:var(--muted)}
+/* education */
+.edu{display:grid;gap:0}
+.edu div{display:grid;grid-template-columns:150px 1fr auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.edu .yr{color:var(--muted)}
+.edu b{font-weight:500}
+footer{padding:64px 0 48px;border-top:1px solid var(--line)}
+footer h2{margin-bottom:12px}
+footer ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:6px}
+@media (max-width:700px){.about{grid-template-columns:1fr}.med{grid-template-columns:1fr}.edu div{grid-template-columns:1fr;gap:2px}.proj{padding:22px}}
+@media (prefers-reduced-motion:reduce){.layers span{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+
+<header class="hero">
+<h1>Acshaya M N</h1>
+<div class="layers" aria-hidden="true"><span></span><span></span><span></span></div>
+<p class="lead">AI &amp; Data Science student in Coimbatore who builds backend systems and data pipelines that turn raw material into something people can use.</p>
+<div class="btns"><a class="btn primary" href="#projects">See my projects</a><a class="btn" href="mailto:acshayamangalamurugan@gmail.com">Email me</a></div>
+</header>
+
+<section id="about">
+<h2>About</h2>
+<div class="about">
+<p>I'm a B.Tech student in Artificial Intelligence and Data Science with a strong base in problem-solving and backend development. I like learning by building: a study assistant that answers only from your own notes, a data warehouse that cleans messy source data into reporting-ready tables.</p>
+<ul class="facts">
+<li><b>Location</b><br>Coimbatore, Tamil Nadu</li>
+<li><b>Studying</b><br>B.Tech AI &amp; Data Science, CGPA 8.1</li>
+<li><b>Focus</b><br>Backend development, data engineering</li>
+</ul>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+
+<article class="proj">
+<h3>Campus AI</h3>
+<p>An AI study assistant for students. Upload PDF lecture notes, then ask questions, generate summaries, or take AI-generated quizzes. Every answer comes strictly from the student's own documents.</p>
+<ol class="flow">
+<li>Upload PDF notes</li>
+<li>Create OpenAI embeddings</li>
+<li>Store and search in Pinecone</li>
+<li>Answer, summarize or quiz</li>
+</ol>
+<ul class="tags"><li>Java</li><li>Spring Boot</li><li>RAG</li><li>OpenAI Embeddings</li><li>Pinecone</li></ul>
+</article>
+
+<article class="proj">
+<h3>ETL Data Warehouse (Medallion Architecture)</h3>
+<p>A scalable SQL data warehouse with end-to-end ETL pipelines that pull data from multiple source systems and refine it through three layers.</p>
+<div class="med">
+<div><strong>Bronze</strong>Extracts data from source systems and stores it raw.</div>
+<div><strong>Silver</strong>Cleans and standardizes: fixes missing values, duplicates and inconsistent formats.</div>
+<div><strong>Gold</strong>Data models built for business reporting and analytical queries.</div>
+</div>
+<ul class="tags"><li>SQL</li><li>ETL pipelines</li><li>Data modeling</li><li>Data warehousing</li></ul>
+</article>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="skills">
+<div><h3>Languages</h3><p>Java, Python</p></div>
+<div><h3>Web</h3><p>HTML, CSS, JavaScript</p></div>
+<div><h3>Backend</h3><p>FastAPI</p></div>
+<div><h3>Databases</h3><p>MySQL, PostgreSQL</p></div>
+<div><h3>Libraries</h3><p>NumPy, Pandas, Matplotlib</p></div>
+<div><h3>Tools</h3><p>Git, GitHub, VS Code, Jupyter Notebook</p></div>
+<div><h3>Coursework</h3><p>Data Structures and Algorithms, Object-Oriented Programming, Database Management Systems</p></div>
+</div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<div class="edu">
+<div><span class="yr">2022 – Present</span><span><b>B.Tech, Artificial Intelligence and Data Science</b><br>KGiSL Institute of Technology</span><span>CGPA 8.1</span></div>
+<div><span class="yr">2021 – 2022</span><span><b>Higher Secondary</b><br>Vimal Jyothi Convent Matriculation Higher Secondary School</span><span>87%</span></div>
+<div><span class="yr">2019 – 2020</span><span><b>Secondary</b><br>Vimal Jyothi Convent Matriculation Higher Secondary School</span><span>82%</span></div>
+</div>
+</section>
+
+<footer id="contact">
+<h2>Let's talk</h2>
+<p>Open to internships and entry-level backend or data roles.</p>
+<ul>
+<li>Email: <a href="mailto:acshayamangalamurugan@gmail.com">acshayamangalamurugan@gmail.com</a></li>
+<li>Phone: <a href="tel:+919092222554">+91 90922 22554</a></li>
+<li>LinkedIn: <a href="https://linkedin.com/acshaya">linkedin.com/acshaya</a></li>
+<li>GitHub: <a href="https://github.com/acshaya">github.com/acshaya</a></li>
+</ul>
+</footer>
+</div>
+</body>
+</html>
