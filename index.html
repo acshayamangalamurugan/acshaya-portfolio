@@ -37,9 +37,6 @@ h3{font-size:24px;font-weight:700}
 .about{display:grid;grid-template-columns:2fr 1fr;gap:40px}
 .facts{margin:0;padding:0;list-style:none;color:var(--muted)}
 .facts li{padding:8px 0;border-bottom:1px solid var(--line)}.facts b{color:var(--ink);font-weight:500}
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
-.chip{font:inherit;font-size:15px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:4px 14px;cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .hint{color:var(--muted);font-size:15px;margin:-12px 0 16px}
 .proj{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-bottom:20px}
 .proj[hidden]{display:none}
@@ -82,9 +79,9 @@ footer ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:6px}
 <section id="about">
 <h2>About</h2>
 <div class="about">
-<p>I have a strong foundation in problem-solving and backend development, and I focus on continuous learning and building practical software that creates value. My projects range from an AI study assistant that answers only from your own notes to a data warehouse and a crime analytics dashboard.</p>
+<p>I have a strong foundation in problem-solving and backend development, and I focus on continuous learning and building practical software that creates value. My projects range from an AI study assistant that answers only from your own notes to a scalable SQL data warehouse.</p>
 <ul class="facts">
-<li><b>Graduate</b><br>B.Tech AI &amp; Data Science, CGPA 8.1</li>
+<li><b>Graduate</b><br>B.Tech AI &amp; Data Science, CGPA 8.21</li>
 <li><b>Focus</b><br>Backend development, data engineering</li>
 </ul>
 </div>
@@ -92,7 +89,6 @@ footer ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:6px}
 
 <section id="projects">
 <h2>Projects</h2>
-<div class="filters" role="group" aria-label="Filter projects by technology" id="filters"></div>
 
 <article class="proj" data-tech="Java,Spring Boot,RAG,OpenAI,Pinecone">
 <header class="phead"><span><h3>Campus AI</h3><span class="sub">AI-powered study assistant</span></span></header>
@@ -125,19 +121,6 @@ footer ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:6px}
 </div>
 </article>
 
-<article class="proj" data-tech="Excel,SQL,Power BI">
-<header class="phead"><span><h3>Crime Data Analysis Dashboard</h3><span class="sub">Excel, SQL and Power BI</span></span></header>
-<div class="body">
-<ul class="pts">
-<li>Developed an interactive crime analytics dashboard using Excel, SQL and Power BI.</li>
-<li>Analyzed crime records from 2013 across multiple cities.</li>
-<li>Identified crime patterns, trends and high-risk areas.</li>
-<li>Supports data-driven decision-making for public safety and law enforcement agencies.</li>
-</ul>
-<ul class="tags"><li>Excel</li><li>SQL</li><li>Power BI</li><li>Data analysis</li></ul>
-</div>
-</article>
-<p class="hint" id="empty" hidden>No project matches this filter.</p>
 </section>
 
 <section id="skills">
@@ -156,7 +139,7 @@ footer ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:6px}
 <section id="education">
 <h2>Education</h2>
 <div class="edu">
-<div><span class="yr">2022 – Present</span><span><b>B.Tech, Artificial Intelligence and Data Science</b><br>KGiSL Institute of Technology</span><span>CGPA 8.1</span></div>
+<div><span class="yr">2022 – Present</span><span><b>B.Tech, Artificial Intelligence and Data Science</b><br>KGiSL Institute of Technology</span><span>CGPA 8.21</span></div>
 <div><span class="yr">2021 – 2022</span><span><b>Higher Secondary</b><br>Vimal Jyothi Convent Matriculation Higher Secondary School</span><span>87%</span></div>
 <div><span class="yr">2019 – 2020</span><span><b>Secondary</b><br>Vimal Jyothi Convent Matriculation Higher Secondary School</span><span>82%</span></div>
 </div>
@@ -189,24 +172,6 @@ document.getElementById('theme').onclick=function(){
   var dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
   root.dataset.theme=dark?'light':'dark';
 };
-/* project filter */
-var cards=[].slice.call(document.querySelectorAll('.proj'));
-var techs=['All','Java','Spring Boot','RAG','SQL','ETL','Excel','Power BI'];
-var fbox=document.getElementById('filters');
-techs.forEach(function(t,i){
-  var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=t;
-  b.setAttribute('aria-pressed',i===0);
-  b.onclick=function(){
-    [].forEach.call(fbox.children,function(c){c.setAttribute('aria-pressed',c===b)});
-    var shown=0;
-    cards.forEach(function(c){
-      var ok=t==='All'||c.dataset.tech.split(',').indexOf(t)>-1;
-      c.hidden=!ok;if(ok)shown++;
-    });
-    document.getElementById('empty').hidden=shown>0;
-  };
-  fbox.appendChild(b);
-});
 /* Campus AI steps */
 var steps=[
  ['Upload notes','The student uploads PDF lecture notes, which are split into passages.'],
