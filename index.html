@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Acshaya M N | AI & Data Science</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f4f6f8;--surface:#fff;--ink:#17202b;--muted:#556170;--line:#d9dee4;--bronze:#a86a35;--silver:#9aa4b0;--gold:#d9a21b;--link:#8a5a00;
@@ -18,78 +17,74 @@ h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;
 a{color:var(--link)}
 a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .wrap{max-width:960px;margin:0 auto;padding:0 24px}
-nav{display:flex;gap:20px;flex-wrap:wrap;padding:20px 0;font-weight:500}
-nav a{color:var(--ink);text-decoration:none}
-nav a:hover{text-decoration:underline}
-/* hero */
-.hero{padding:56px 0 72px}
+nav{display:flex;gap:20px;flex-wrap:wrap;align-items:center;padding:20px 0;font-weight:500}
+nav a{color:var(--ink);text-decoration:none}nav a:hover{text-decoration:underline}
+#theme{margin-left:auto;background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:4px 12px;font:inherit;font-size:15px;cursor:pointer}
+.hero{padding:48px 0 72px}
 .hero h1{font-size:clamp(48px,11vw,112px);font-weight:800;letter-spacing:-.03em}
-.hero p.lead{max-width:56ch;font-size:20px;color:var(--muted);margin:24px 0 32px}
+.lead{max-width:56ch;font-size:20px;color:var(--muted);margin:24px 0 32px}
 .layers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;max-width:560px;margin-bottom:32px}
 .layers span{display:block;height:14px;border-radius:2px;transform-origin:left;animation:fill 1.1s ease-out both}
-.layers span:nth-child(1){background:var(--bronze)}
-.layers span:nth-child(2){background:var(--silver);animation-delay:.35s}
-.layers span:nth-child(3){background:var(--gold);animation-delay:.7s}
+.layers span:nth-child(1){background:var(--bronze)}.layers span:nth-child(2){background:var(--silver);animation-delay:.35s}.layers span:nth-child(3){background:var(--gold);animation-delay:.7s}
 @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .btns{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:500;text-decoration:none;border:2px solid var(--ink);color:var(--ink)}
 .btn.primary{background:var(--ink);color:var(--bg)}
 .btn:hover{background:var(--gold);border-color:var(--gold);color:#17202b}
 section{padding:64px 0;border-top:1px solid var(--line)}
-h2{font-size:clamp(30px,5vw,44px);font-weight:700;margin-bottom:28px;letter-spacing:-.02em}
+h2{font-size:clamp(30px,5vw,44px);font-weight:700;margin-bottom:24px;letter-spacing:-.02em}
 h3{font-size:24px;font-weight:700}
 .about{display:grid;grid-template-columns:2fr 1fr;gap:40px}
 .facts{margin:0;padding:0;list-style:none;color:var(--muted)}
-.facts li{padding:8px 0;border-bottom:1px solid var(--line)}
-.facts b{color:var(--ink);font-weight:500}
-/* projects */
-.proj{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:32px;margin-bottom:24px}
-.proj p{max-width:68ch;margin:12px 0 20px}
+.facts li{padding:8px 0;border-bottom:1px solid var(--line)}.facts b{color:var(--ink);font-weight:500}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{font:inherit;font-size:15px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:4px 14px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.hint{color:var(--muted);font-size:15px;margin:-12px 0 16px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-bottom:20px}
+.proj[hidden]{display:none}
+.phead{padding:24px 28px 16px}
+.sub{display:block;color:var(--muted);font-size:16px;margin-top:6px}
+.body{padding:0 28px 28px}
+.body ul.pts{margin:0 0 20px;padding-left:20px;max-width:68ch}.body ul.pts li{margin:6px 0}
 .tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:20px 0 0;list-style:none}
 .tags li{border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:14px;color:var(--muted)}
-.flow{display:flex;gap:8px;flex-wrap:wrap;padding:0;margin:0;list-style:none;counter-reset:s}
-.flow li{counter-increment:s;flex:1 1 140px;border:1px solid var(--line);border-radius:6px;padding:10px 12px;font-size:15px}
-.flow li::before{content:counter(s) ". ";font-weight:500;color:var(--link)}
-.med{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.med div{border-radius:6px;padding:14px;font-size:15px;color:#17202b}
-.med div:nth-child(1){background:var(--bronze)}
-.med div:nth-child(2){background:var(--silver)}
-.med div:nth-child(3){background:var(--gold)}
-.med strong{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:19px}
-/* skills */
+.steps{display:flex;gap:8px;flex-wrap:wrap}
+.steps button,.tabs button{flex:1 1 130px;font:inherit;font-size:15px;text-align:left;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:6px;padding:10px 12px;cursor:pointer}
+.steps button[aria-pressed="true"]{border-color:var(--gold);box-shadow:inset 0 -3px 0 var(--gold)}
+.out{margin:12px 0 0;padding:12px 14px;border-left:4px solid var(--gold);background:var(--bg);border-radius:0 6px 6px 0;min-height:3.4em}
+.tabs{display:flex;gap:8px}
+.tabs button{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:18px;color:#17202b;border:0}
+.tabs button:nth-child(1){background:var(--bronze)}.tabs button:nth-child(2){background:var(--silver)}.tabs button:nth-child(3){background:var(--gold)}
+.tabs button[aria-selected="false"]{opacity:.45}
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px 40px}
-.skills h3{font-size:18px;margin-bottom:8px}
-.skills p{margin:0;color:var(--muted)}
-/* education */
-.edu{display:grid;gap:0}
-.edu div{display:grid;grid-template-columns:150px 1fr auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
-.edu .yr{color:var(--muted)}
-.edu b{font-weight:500}
-footer{padding:64px 0 48px;border-top:1px solid var(--line)}
-footer h2{margin-bottom:12px}
+.skills h3{font-size:18px;margin-bottom:8px}.skills p{margin:0;color:var(--muted)}
+.edu div,.cert li{display:grid;grid-template-columns:150px 1fr auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.edu .yr{color:var(--muted)}.edu b{font-weight:500}
+.cert{list-style:none;margin:0;padding:0}.cert li{grid-template-columns:1fr auto;gap:16px}.cert span{color:var(--muted)}
+footer{padding:64px 0 48px;border-top:1px solid var(--line)}footer h2{margin-bottom:12px}
 footer ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:6px}
-@media (max-width:700px){.about{grid-template-columns:1fr}.med{grid-template-columns:1fr}.edu div{grid-template-columns:1fr;gap:2px}.proj{padding:22px}}
+@media (max-width:700px){.about{grid-template-columns:1fr}.edu div{grid-template-columns:1fr;gap:2px}.cert li{grid-template-columns:1fr}.phead{padding:20px 20px 12px}.body{padding:0 20px 22px}}
 @media (prefers-reduced-motion:reduce){.layers span{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<nav aria-label="Main"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+<nav aria-label="Main"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#certs">Certifications</a><a href="#contact">Contact</a><button id="theme" type="button">Switch theme</button></nav>
 
 <header class="hero">
 <h1>Acshaya M N</h1>
 <div class="layers" aria-hidden="true"><span></span><span></span><span></span></div>
-<p class="lead">AI &amp; Data Science student in Coimbatore who builds backend systems and data pipelines that turn raw material into something people can use.</p>
+<p class="lead">AI &amp; Data Science graduate who builds backend systems, data pipelines and dashboards that turn raw data into something people can use.</p>
 <div class="btns"><a class="btn primary" href="#projects">See my projects</a><a class="btn" href="mailto:acshayamangalamurugan@gmail.com">Email me</a></div>
 </header>
 
 <section id="about">
 <h2>About</h2>
 <div class="about">
-<p>I'm a B.Tech student in Artificial Intelligence and Data Science with a strong base in problem-solving and backend development. I like learning by building: a study assistant that answers only from your own notes, a data warehouse that cleans messy source data into reporting-ready tables.</p>
+<p>I have a strong foundation in problem-solving and backend development, and I focus on continuous learning and building practical software that creates value. My projects range from an AI study assistant that answers only from your own notes to a data warehouse and a crime analytics dashboard.</p>
 <ul class="facts">
-<li><b>Location</b><br>Coimbatore, Tamil Nadu</li>
-<li><b>Studying</b><br>B.Tech AI &amp; Data Science, CGPA 8.1</li>
+<li><b>Graduate</b><br>B.Tech AI &amp; Data Science, CGPA 8.1</li>
 <li><b>Focus</b><br>Backend development, data engineering</li>
 </ul>
 </div>
@@ -97,37 +92,60 @@ footer ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:6px}
 
 <section id="projects">
 <h2>Projects</h2>
+<div class="filters" role="group" aria-label="Filter projects by technology" id="filters"></div>
 
-<article class="proj">
-<h3>Campus AI</h3>
-<p>An AI study assistant for students. Upload PDF lecture notes, then ask questions, generate summaries, or take AI-generated quizzes. Every answer comes strictly from the student's own documents.</p>
-<ol class="flow">
-<li>Upload PDF notes</li>
-<li>Create OpenAI embeddings</li>
-<li>Store and search in Pinecone</li>
-<li>Answer, summarize or quiz</li>
-</ol>
-<ul class="tags"><li>Java</li><li>Spring Boot</li><li>RAG</li><li>OpenAI Embeddings</li><li>Pinecone</li></ul>
-</article>
-
-<article class="proj">
-<h3>ETL Data Warehouse (Medallion Architecture)</h3>
-<p>A scalable SQL data warehouse with end-to-end ETL pipelines that pull data from multiple source systems and refine it through three layers.</p>
-<div class="med">
-<div><strong>Bronze</strong>Extracts data from source systems and stores it raw.</div>
-<div><strong>Silver</strong>Cleans and standardizes: fixes missing values, duplicates and inconsistent formats.</div>
-<div><strong>Gold</strong>Data models built for business reporting and analytical queries.</div>
+<article class="proj" data-tech="Java,Spring Boot,RAG,OpenAI,Pinecone">
+<header class="phead"><span><h3>Campus AI</h3><span class="sub">AI-powered study assistant</span></span></header>
+<div class="body">
+<ul class="pts">
+<li>Built with Java Spring Boot and RAG (Retrieval-Augmented Generation).</li>
+<li>Students upload PDF lecture notes, then ask questions, generate summaries and take AI-generated quizzes.</li>
+<li>All answers come strictly from the student's own documents.</li>
+<li>Uses OpenAI embeddings and Pinecone vector search.</li>
+</ul>
+<p class="hint">Select a step to see how it works.</p>
+<div class="steps" id="steps"></div>
+<p class="out" id="stepout" aria-live="polite"></p>
+<ul class="tags"><li>Java</li><li>Spring Boot</li><li>RAG</li><li>OpenAI</li><li>Pinecone</li></ul>
 </div>
-<ul class="tags"><li>SQL</li><li>ETL pipelines</li><li>Data modeling</li><li>Data warehousing</li></ul>
 </article>
+
+<article class="proj" data-tech="SQL,ETL">
+<header class="phead"><span><h3>ETL Data Warehouse Development</h3><span class="sub">Medallion Architecture</span></span></header>
+<div class="body">
+<ul class="pts">
+<li>Designed and implemented a scalable SQL Data Warehouse using Bronze, Silver and Gold layers.</li>
+<li>Built end-to-end ETL pipelines to extract data from multiple source systems.</li>
+<li>Cleansed and standardized data, handling missing values, duplicates and inconsistent formats.</li>
+<li>Developed data models optimized for business reporting and analytical queries.</li>
+</ul>
+<div class="tabs" role="tablist" id="tabs"></div>
+<p class="out" id="tabout" role="tabpanel" aria-live="polite"></p>
+<ul class="tags"><li>SQL</li><li>ETL</li><li>Medallion Architecture</li><li>Data modeling</li></ul>
+</div>
+</article>
+
+<article class="proj" data-tech="Excel,SQL,Power BI">
+<header class="phead"><span><h3>Crime Data Analysis Dashboard</h3><span class="sub">Excel, SQL and Power BI</span></span></header>
+<div class="body">
+<ul class="pts">
+<li>Developed an interactive crime analytics dashboard using Excel, SQL and Power BI.</li>
+<li>Analyzed crime records from 2013 across multiple cities.</li>
+<li>Identified crime patterns, trends and high-risk areas.</li>
+<li>Supports data-driven decision-making for public safety and law enforcement agencies.</li>
+</ul>
+<ul class="tags"><li>Excel</li><li>SQL</li><li>Power BI</li><li>Data analysis</li></ul>
+</div>
+</article>
+<p class="hint" id="empty" hidden>No project matches this filter.</p>
 </section>
 
 <section id="skills">
 <h2>Skills</h2>
 <div class="skills">
 <div><h3>Languages</h3><p>Java, Python</p></div>
-<div><h3>Web</h3><p>HTML, CSS, JavaScript</p></div>
-<div><h3>Backend</h3><p>FastAPI</p></div>
+<div><h3>Web</h3><p>HTML, CSS</p></div>
+<div><h3>Backend</h3><p>FastAPI, Spring Boot</p></div>
 <div><h3>Databases</h3><p>MySQL, PostgreSQL</p></div>
 <div><h3>Libraries</h3><p>NumPy, Pandas, Matplotlib</p></div>
 <div><h3>Tools</h3><p>Git, GitHub, VS Code, Jupyter Notebook</p></div>
@@ -144,16 +162,79 @@ footer ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:6px}
 </div>
 </section>
 
+<section id="certs">
+<h2>Certifications</h2>
+<ul class="cert">
+<li><b>SQL (Basics)</b><span>HackerRank</span></li>
+<li><b>Python (Basics)</b><span>HackerRank</span></li>
+<li><b>Foundational level, BS Degree in Data Science and Application</b><span>IIT Madras</span></li>
+</ul>
+</section>
+
 <footer id="contact">
 <h2>Let's talk</h2>
 <p>Open to internships and entry-level backend or data roles.</p>
 <ul>
 <li>Email: <a href="mailto:acshayamangalamurugan@gmail.com">acshayamangalamurugan@gmail.com</a></li>
 <li>Phone: <a href="tel:+919092222554">+91 90922 22554</a></li>
-<li>LinkedIn: <a href="https://linkedin.com/acshaya">linkedin.com/acshaya</a></li>
-<li>GitHub: <a href="https://github.com/acshaya">github.com/acshaya</a></li>
+<li>LinkedIn: <a href="https://www.linkedin.com/in/acshaya-mangalamurugan-a87739255/">linkedin.com/in/acshaya-mangalamurugan</a></li>
+<li>GitHub: <a href="https://github.com/acshaya7574">github.com/acshaya7574</a></li>
 </ul>
 </footer>
 </div>
+<script>
+(function(){
+var root=document.documentElement;
+document.getElementById('theme').onclick=function(){
+  var dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+  root.dataset.theme=dark?'light':'dark';
+};
+/* project filter */
+var cards=[].slice.call(document.querySelectorAll('.proj'));
+var techs=['All','Java','Spring Boot','RAG','SQL','ETL','Excel','Power BI'];
+var fbox=document.getElementById('filters');
+techs.forEach(function(t,i){
+  var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=t;
+  b.setAttribute('aria-pressed',i===0);
+  b.onclick=function(){
+    [].forEach.call(fbox.children,function(c){c.setAttribute('aria-pressed',c===b)});
+    var shown=0;
+    cards.forEach(function(c){
+      var ok=t==='All'||c.dataset.tech.split(',').indexOf(t)>-1;
+      c.hidden=!ok;if(ok)shown++;
+    });
+    document.getElementById('empty').hidden=shown>0;
+  };
+  fbox.appendChild(b);
+});
+/* Campus AI steps */
+var steps=[
+ ['Upload notes','The student uploads PDF lecture notes, which are split into passages.'],
+ ['Embed','OpenAI embeddings turn each passage into a vector that captures its meaning.'],
+ ['Search','Pinecone vector search finds the passages closest to the student\'s question.'],
+ ['Answer','The assistant answers, summarizes or builds a quiz strictly from those passages.']
+];
+var sb=document.getElementById('steps'),so=document.getElementById('stepout');
+steps.forEach(function(s,i){
+  var b=document.createElement('button');b.type='button';b.textContent=(i+1)+'. '+s[0];
+  b.onclick=function(){[].forEach.call(sb.children,function(c){c.setAttribute('aria-pressed',c===b)});so.textContent=s[1]};
+  sb.appendChild(b);
+});
+sb.children[0].click();
+/* Medallion tabs */
+var layers=[
+ ['Bronze','Raw data extracted from multiple source systems and stored as it arrives.'],
+ ['Silver','Data transformed, cleansed and standardized: missing values, duplicates and inconsistent formats fixed.'],
+ ['Gold','Data models optimized for business reporting and analytical queries.']
+];
+var tb=document.getElementById('tabs'),to=document.getElementById('tabout');
+layers.forEach(function(l){
+  var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=l[0];
+  b.onclick=function(){[].forEach.call(tb.children,function(c){c.setAttribute('aria-selected',c===b)});to.textContent=l[1]};
+  tb.appendChild(b);
+});
+tb.children[0].click();
+})();
+</script>
 </body>
 </html>
